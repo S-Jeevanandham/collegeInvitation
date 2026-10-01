@@ -26,53 +26,31 @@ button{font:inherit;cursor:pointer}
 
 /* ===== INTRO: ENVELOPE ===== */
 .intro{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.6rem;
-  padding:1rem;overflow:hidden;transition:opacity 1s,transform 1.2s}
-.intro::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 52%,#8d1b3888,transparent 58%);animation:breathe 6s ease-in-out infinite}
-@keyframes breathe{50%{opacity:.5;transform:scale(1.1)}}
-.intro>h2,.intro>p{position:relative;z-index:1}
-.tag{color:var(--gl);font-style:italic;font-size:1.15rem;text-align:center;margin-top:-1.4rem;animation:rise 1.4s ease .7s both;transition:opacity .6s}
+  padding:1rem;transition:opacity 1s,transform 1.2s}
 .intro.leave{opacity:0;transform:scale(1.25);pointer-events:none}
 .intro h2{font-size:clamp(2.2rem,8vw,3.6rem);text-align:center;animation:rise 1.4s ease both}
 .hint{color:var(--gl);letter-spacing:.18em;font-size:1rem;animation:rise 1.4s ease 1s both,blink 2.4s ease-in-out 2.4s infinite;transition:opacity .5s}
 @keyframes blink{50%{opacity:.35}}
-.env.open~.hint,.intro.go .hint,.intro.go h2,.intro.go .tag{opacity:0}
+.env.open~.hint,.intro.go .hint,.intro.go h2{opacity:0}
 .intro h2{transition:opacity .6s}
-.env{position:relative;width:min(88vw,480px);aspect-ratio:3/2;perspective:1200px;z-index:1;animation:envIn 1.8s cubic-bezier(.2,.8,.2,1) .4s both,float 5s ease-in-out 2s infinite}
-@keyframes envIn{from{opacity:0;transform:translateY(70px) rotate(-4deg) scale(.88)}to{opacity:1;transform:none}}
+.env{position:relative;width:min(88vw,480px);aspect-ratio:3/2;perspective:1200px;animation:rise 1.6s ease .4s both,float 5s ease-in-out 2s infinite}
 @keyframes float{50%{transform:translateY(-12px)}}
 .env>*{position:absolute}
-
-.halo{width:122%;aspect-ratio:1;left:-11%;top:50%;margin-top:-61%;border-radius:50%;border:1px dashed #c9a14a77;animation:spin 60s linear infinite}
-.halo.b{width:106%;left:-3%;margin-top:-53%;border:1px solid #c9a14a33;animation-direction:reverse}
-.back{inset:0;background:repeating-linear-gradient(45deg,#ffffff09 0 2px,transparent 2px 10px),linear-gradient(160deg,#8a1934,#45091a);border-radius:6px;box-shadow:0 50px 90px #000b,0 0 0 1px #c9a14a99,0 0 60px #c9a14a22}
-.back::after{content:"";position:absolute;inset:7px;border:1px solid #c9a14a77;border-radius:3px}
+.back{inset:0;background:linear-gradient(160deg,#7d1630,#45091a);border-radius:6px;box-shadow:0 50px 90px #000b,0 0 0 1px #c9a14a88}
 .letter{left:6%;right:6%;top:6%;bottom:6%;z-index:2;background:linear-gradient(#fff8e8,var(--ivory));border:1px solid var(--gold);
   display:grid;place-content:center;text-align:center;transition:transform 1.4s cubic-bezier(.2,.8,.2,1) .9s}
 .letter::before{content:"";position:absolute;inset:6px;border:1px solid #c9a14a88}
 .letter b{font-family:Cinzel,serif;color:var(--wine);font-size:clamp(.8rem,3vw,1.05rem);margin-top:.2rem}
 .letter .script{font-size:clamp(1.6rem,6vw,2.2rem);color:var(--rose)}
 .env.open .letter{transform:translateY(-68%)}
-
-.pocket{inset:0;z-index:3;background:repeating-linear-gradient(135deg,#ffffff08 0 2px,transparent 2px 9px),linear-gradient(170deg,#a62645,#5b0f24 70%,#4a0b1d);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);border-radius:6px}
-.edge{inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
-.edge polyline,.edge path,.flap polyline{fill:none;stroke:#e7c36a;stroke-width:1.5;vector-effect:non-scaling-stroke}
-.edge .dim{stroke-width:1;opacity:.5}
-.addr{left:0;right:0;bottom:6%;z-index:3;text-align:center;pointer-events:none}
-.addr .script{display:block;font-size:clamp(1.15rem,4.8vw,1.7rem);line-height:1.1;color:var(--gl);text-shadow:0 2px 6px #0008}
-.addr small{display:block;margin-top:.25rem;font:500 clamp(.6rem,2.2vw,.8rem) Cinzel,serif;letter-spacing:.22em;color:#f1d58acc}
-
-.flap{left:0;right:0;top:0;height:56%;z-index:4;transform-origin:top;background:repeating-linear-gradient(45deg,#ffffff0a 0 2px,transparent 2px 9px),linear-gradient(#bd3050,#7a1530);
+.pocket{inset:0;z-index:3;background:linear-gradient(170deg,#9b1f3e,#5b0f24);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);border-radius:6px}
+.flap{left:0;right:0;top:0;height:56%;z-index:4;transform-origin:top;background:linear-gradient(#b02a49,#7a1530);
   clip-path:polygon(0 0,100% 0,50% 100%);transition:transform 1s cubic-bezier(.5,0,.2,1) .35s,z-index 0s .75s}
-.flap svg{position:absolute;inset:0;width:100%;height:100%}
-.flap polyline{stroke-width:3}
 .env.open .flap{transform:rotateX(180deg);z-index:1}
-
-.seal{left:50%;top:56%;width:88px;height:88px;margin:-44px 0 0 -44px;z-index:6;border:0;border-radius:50%;color:#f7dd96;
-  font:700 2rem Cinzel,serif;text-shadow:0 -1px 0 #0008,0 1px 0 #ffffff55;
-  background:radial-gradient(circle at 32% 28%,#f0687f,#b3183a 50%,#650b20);
-  box-shadow:0 10px 24px #000b,inset 0 -6px 10px #0005,0 0 0 3px #7a0f2a,0 0 0 4px #c9a14a88;animation:pulse 2s ease-in-out infinite}
-.seal::before{content:"";position:absolute;top:8%;left:16%;width:42%;height:28%;border-radius:50%;background:linear-gradient(#ffffff80,transparent);transform:rotate(-25deg)}
-.seal::after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px solid #f1d58aaa;box-shadow:inset 0 0 0 3px #0002}
+.seal{left:50%;top:56%;width:82px;height:82px;margin:-41px 0 0 -41px;z-index:6;border:0;border-radius:50%;color:var(--gl);
+  font:700 1.9rem Cinzel,serif;background:radial-gradient(circle at 35% 30%,#ea5a73,#a31633 55%,#5e0a1c);
+  box-shadow:0 8px 20px #000a,inset 0 0 0 4px #0003;animation:pulse 2s ease-in-out infinite}
+.seal::after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px dashed #f1d58aaa}
 .seal:focus-visible{outline:3px solid var(--gl);outline-offset:5px}
 @keyframes pulse{50%{box-shadow:0 8px 20px #000a,0 0 0 16px #ea5a7322}}
 .env.open .seal{animation:crack .7s ease forwards}
@@ -106,7 +84,6 @@ button{font:inherit;cursor:pointer}
 .logo img,.logo::after{position:absolute;inset:9px;width:calc(100% - 18px);height:calc(100% - 18px);border-radius:50%;background:#fff;object-fit:contain;padding:7px;box-shadow:0 8px 24px #5b0f2444}
 .logo::after{content:"Your college logo";display:none;place-items:center;text-align:center;padding:12px;font:700 .7rem/1.3 Cinzel,serif;color:var(--wine);background:#fff9}
 .logo.empty img{display:none}.logo.empty::after{display:grid}
-.college{font:700 clamp(1.05rem,4.4vw,1.7rem)/1.3 Cinzel,serif;letter-spacing:.07em;text-transform:uppercase;color:var(--wine);margin:0 auto 1.1rem;max-width:80rem;overflow-wrap:break-word}
 .card .script{font-size:clamp(1.8rem,6vw,2.6rem);color:var(--rose);line-height:1.2}
 h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem);line-height:1.1;margin:.5rem 0 .2rem}
 .sub{font-style:italic;font-size:1.3rem;color:var(--wine)}
@@ -186,15 +163,11 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
 
 <section class="intro" id="intro">
   <h2 class="script foil">A special invitation awaits you</h2>
-  <p class="tag">Hand-delivered to our students and professors</p>
   <div class="env" id="env">
-    <div class="halo"></div><div class="halo b"></div>
     <div class="back"></div>
-    <div class="letter"><span class="script">You are invited</span><b>Freshers' Welcome Party</b><span class="script">Computer Science Department</span></div>
+    <div class="letter"><span class="script">You are invited</span><b>Freshers' Welcome Party</b></div>
     <div class="pocket"></div>
-    <svg class="edge" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,0 150,112 300,0"/><path class="dim" d="M10,26 V190 H290 V26"/></svg>
-    <div class="addr"><span class="script">For our Students &amp; Respected Professors</span><small>07 . 10 . 2026</small></div>
-    <div class="flap"><svg viewBox="0 0 300 112" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,0 150,112 300,0"/></svg></div>
+    <div class="flap"></div>
     <button class="seal" id="seal" aria-label="Open the invitation">F</button>
   </div>
   <p class="hint">TAP THE SEAL TO OPEN</p>
@@ -206,8 +179,6 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
       <div class="card" id="card">
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
         <!-- Put your logo file next to index.html and name it logo.png (or change the src below) -->
-        <h2 class="college">Government Arts College,</h2>
-        <h2 class="college">Kumbakonam.</h2>
         <div class="logo" id="logo"><img src="logo.png" alt="College logo"></div>
         <p class="script">With joy and blessings, we invite you to</p>
         <h1 class="foil">Freshers' Welcome Party</h1>
@@ -251,7 +222,7 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
       <div class="rv"><b>10:30 AM</b>Address by our professors</div>
       <div class="rv"><b>11:15 AM</b>Cultural performances</div>
       <div class="rv"><b>12:30 PM</b>Games and fun</div>
-      <div class="rv"><b>1:00 PM</b>Concluding with Friendship</div>
+      <div class="rv"><b>1:00 PM</b> Concluding with Friendship</div>
     </div>
   </section>
 
