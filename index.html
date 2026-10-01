@@ -110,6 +110,12 @@ button{font:inherit;cursor:pointer}
 .logo::after{content:"Your college logo";display:none;place-items:center;text-align:center;padding:12px;font:700 .7rem/1.3 Cinzel,serif;color:var(--wine);background:#fff9}
 .logo.empty img{display:none}.logo.empty::after{display:grid}
 .college{font:700 clamp(1.05rem,4.4vw,1.7rem)/1.3 Cinzel,serif;letter-spacing:.07em;text-transform:uppercase;color:var(--wine);margin:0 auto 1.1rem;max-width:80rem;overflow-wrap:break-word}
+.dept{display:inline-block;max-width:100%;margin:-.2rem 0 1.3rem;padding:.4rem 1.5rem;
+  font:700 clamp(.85rem,3.4vw,1.15rem)/1.3 Cinzel,serif;letter-spacing:.1em;color:#fff3c4;
+  background:linear-gradient(100deg,var(--wine),var(--rose),var(--wine)) 0 0/200% 100%;
+  border:1.5px solid var(--gold);border-radius:999px;overflow-wrap:break-word;
+  box-shadow:0 6px 18px #5b0f2455,0 0 0 4px #c9a14a22;animation:dept 4s linear infinite}
+@keyframes dept{to{background-position:200% 0}}
 .card .script{font-size:clamp(1.8rem,6vw,2.6rem);color:var(--rose);line-height:1.2}
 h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem);line-height:1.1;margin:.5rem 0 .2rem}
 .sub{font-style:italic;font-size:1.3rem;color:var(--wine)}
@@ -197,7 +203,7 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
     <svg class="edge" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,0 150,112 300,0"/><path class="dim" d="M10,26 V190 H290 V26"/></svg>
     <div class="addr"><span class="script">For our Students &amp; Respected Professors</span><small>07 . 10 . 2026</small></div>
     <div class="flap"><svg viewBox="0 0 300 112" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,0 150,112 300,0"/></svg></div>
-    <button class="seal" id="seal" aria-label="Open the invitation">F</button>
+    <button class="seal" id="seal" aria-label="Open the invitation">CS</button>
   </div>
   <p class="hint">TAP THE SEAL TO OPEN</p>
 </section>
@@ -209,6 +215,7 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
         <!-- Put your logo file next to index.html and name it logo.png (or change the src below) -->
         <h2 class="college">Government Arts College, kumbakonam</h2>
+        <div class="dept">Department of Computer Science</div>
         <div class="logo" id="logo"><img src="logo.png" alt="College logo"></div>
         <p class="script">With joy and blessings, we invite you to</p>
         <h1 class="foil">Freshers' Welcome Party</h1>
