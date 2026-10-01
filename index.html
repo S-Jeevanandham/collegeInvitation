@@ -9,7 +9,7 @@
 <style>
 :root{--bg:#1d040d;--wine:#5b0f24;--rose:#8d1b38;--gold:#c9a14a;--gl:#f1d58a;--ivory:#f8eed8;--ink:#33091a}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+html,body{height:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%}
 body{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;color:var(--ink);overflow:hidden;
   background:radial-gradient(ellipse at 50% 0,#4a0b1e,var(--bg) 70%) fixed}
 body.open{overflow-x:hidden;overflow-y:auto}
@@ -31,7 +31,8 @@ button{font:inherit;cursor:pointer}
 .intro h2{font-size:clamp(2.2rem,8vw,3.6rem);text-align:center;animation:rise 1.4s ease both}
 .hint{color:var(--gl);letter-spacing:.18em;font-size:1rem;animation:rise 1.4s ease 1s both,blink 2.4s ease-in-out 2.4s infinite;transition:opacity .5s}
 @keyframes blink{50%{opacity:.35}}
-.env.open~.hint,.intro.go .hint{opacity:0}
+.env.open~.hint,.intro.go .hint,.intro.go h2{opacity:0}
+.intro h2{transition:opacity .6s}
 .env{position:relative;width:min(88vw,480px);aspect-ratio:3/2;perspective:1200px;animation:rise 1.6s ease .4s both,float 5s ease-in-out 2s infinite}
 @keyframes float{50%{transform:translateY(-12px)}}
 .env>*{position:absolute}
@@ -61,7 +62,7 @@ button{font:inherit;cursor:pointer}
 /* ===== PAGE ===== */
 #page{position:relative;z-index:10;opacity:0;visibility:hidden}
 #page.show{visibility:visible;opacity:1;transition:opacity 1s}
-.hero{min-height:100vh;display:grid;place-items:center;padding:clamp(1.5rem,5vw,4rem) 1rem}
+.hero{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:clamp(1.5rem,5vw,4rem) 1rem}
 .tilt{width:100%;max-width:50rem;perspective:1000px;transition:transform .2s ease-out}
 .card{position:relative;text-align:center;padding:clamp(2.2rem,6vw,4.2rem) clamp(1.2rem,5vw,3.6rem);
   background:radial-gradient(circle at 50% 0,#fffaf0,var(--ivory) 60%,#efdfba);border:2px solid var(--gold);
@@ -84,7 +85,7 @@ button{font:inherit;cursor:pointer}
 .logo::after{content:"Your college logo";display:none;place-items:center;text-align:center;padding:12px;font:700 .7rem/1.3 Cinzel,serif;color:var(--wine);background:#fff9}
 .logo.empty img{display:none}.logo.empty::after{display:grid}
 .card .script{font-size:clamp(1.8rem,6vw,2.6rem);color:var(--rose);line-height:1.2}
-h1{font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem);line-height:1.1;margin:.5rem 0 .2rem}
+h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem);line-height:1.1;margin:.5rem 0 .2rem}
 .sub{font-style:italic;font-size:1.3rem;color:var(--wine)}
 .divider{height:1px;max-width:18rem;margin:1.4rem auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative}
 .divider i{position:absolute;left:50%;top:50%;width:12px;height:12px;background:var(--rose);border:2px solid var(--gold);transform:translate(-50%,-50%) rotate(45deg);animation:glow 2s ease-in-out infinite}
@@ -100,15 +101,16 @@ h1{font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem)
 .when span{display:block;font-style:italic;color:var(--rose);font-size:1rem}
 .when b{display:block;font-family:Cinzel,serif;font-size:clamp(1.25rem,4.5vw,1.9rem);color:var(--wine);margin:.2rem 0}
 .when small{font-size:1rem}
-.countdown{display:flex;justify-content:center;gap:clamp(.4rem,2.5vw,1rem);margin-bottom:1.8rem}
-.countdown div{min-width:66px;padding:.7rem .4rem;background:linear-gradient(180deg,var(--rose),var(--wine));color:var(--gl);border:1px solid var(--gold);box-shadow:0 10px 20px #5b0f2455}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.35rem,2vw,.9rem);max-width:26rem;margin:0 auto 1.8rem}
+.countdown div{min-width:0;padding:.7rem .4rem;background:linear-gradient(180deg,var(--rose),var(--wine));color:var(--gl);border:1px solid var(--gold);box-shadow:0 10px 20px #5b0f2455}
 .countdown b{display:block;font:700 1.7rem Cinzel,serif}.countdown span{font-size:.95rem;font-style:italic}
 .cal{padding:.8rem 2.2rem;border:1.5px solid var(--gold);background:var(--wine);color:var(--gl);font-weight:700;letter-spacing:.06em;transition:.3s}
 .cal:hover{background:var(--gl);color:var(--wine);transform:translateY(-3px)}
 .cal:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
 .scrollhint{margin-top:1.4rem;font-style:italic;color:var(--wine)}
 
-.band{overflow:hidden;background:var(--gold);border-block:2px solid var(--gl);transform:rotate(-1.2deg);margin:1rem -2rem;padding:.7rem 0}
+.bandwrap{overflow:hidden;padding:1.4rem 0}
+.band{overflow:hidden;width:106%;margin-left:-3%;background:var(--gold);border-block:2px solid var(--gl);transform:rotate(-1.2deg);padding:.7rem 0}
 .band div{display:flex;width:max-content;animation:marq 24s linear infinite;font:700 1.15rem Cinzel,serif;color:var(--bg);white-space:nowrap}
 .band span{padding:0 1.6rem}
 @keyframes marq{to{transform:translateX(-50%)}}
@@ -132,7 +134,26 @@ h1{font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem)
 .end p{margin-top:.8rem}
 .rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
 .rv.in{opacity:1;transform:none}
-@media (max-width:640px){body{font-size:1.1rem}.when,.two{grid-template-columns:1fr}.seal{width:64px;height:64px;margin:-32px 0 0 -32px;font-size:1.5rem}}
+@media (max-width:640px){
+  body{font-size:1.05rem}
+  .intro{gap:2rem}
+  .seal{width:64px;height:64px;margin:-32px 0 0 -32px;font-size:1.5rem}
+  .hero{padding:1rem .75rem}
+  .card{padding:2.8rem 1.2rem 2.2rem;box-shadow:0 0 0 5px var(--bg),0 0 0 6px var(--gold),0 30px 60px #000c}
+  .card::before{inset:8px}
+  .corner{width:30px;height:30px}
+  .tl,.tr{top:14px}.bl,.br{bottom:14px}.tl,.bl{left:14px}.tr,.br{right:14px}
+  .card .script{font-size:1.7rem}
+  h1{font-size:clamp(1.8rem,9.5vw,2.6rem)}
+  .sub{font-size:1.15rem}
+  .when,.two{grid-template-columns:1fr}
+  .when div{padding:.8rem .6rem}
+  .countdown div{padding:.55rem .2rem}
+  .countdown b{font-size:1.3rem}.countdown span{font-size:.8rem}
+  .band div{font-size:1rem}
+  .wrap{padding:3rem 1rem}
+  .box{padding:1.8rem 1.2rem}
+}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}}
 </style>
 </head>
@@ -180,10 +201,10 @@ h1{font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem)
     </div>
   </header>
 
-  <div class="band" aria-hidden="true"><div>
+  <div class="bandwrap" aria-hidden="true"><div class="band"><div>
     <span>WELCOME FRESHERS ✦ NEW BEGINNINGS ✦ MUSIC ✦ DANCE ✦ BLESSINGS ✦ FRIENDSHIP ✦</span>
     <span>WELCOME FRESHERS ✦ NEW BEGINNINGS ✦ MUSIC ✦ DANCE ✦ BLESSINGS ✦ FRIENDSHIP ✦</span>
-  </div></div>
+  </div></div></div>
 
   <section class="wrap">
     <h2 class="script rv">Two special invitations</h2>
@@ -201,7 +222,7 @@ h1{font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem)
       <div class="rv"><b>10:30 AM</b>Address by our professors</div>
       <div class="rv"><b>11:15 AM</b>Cultural performances</div>
       <div class="rv"><b>12:30 PM</b>Games and fun</div>
-      <div class="rv"><b>1:00 PM</b>Lunch together</div>
+      <div class="rv"><b>1:00 PM</b> Concluding with Friendship</div>
     </div>
   </section>
 
