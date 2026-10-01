@@ -77,10 +77,12 @@ button{font:inherit;cursor:pointer}
 .tr{top:20px;right:20px;border-left:0;border-bottom:0}.tr::after{top:-5px;right:-5px}
 .bl{bottom:20px;left:20px;border-right:0;border-top:0}.bl::after{bottom:-5px;left:-5px}
 .br{bottom:20px;right:20px;border-left:0;border-top:0}.br::after{bottom:-5px;right:-5px}
-.mandala{width:clamp(78px,18vw,112px);aspect-ratio:1;margin:0 auto 1rem;border-radius:50%;
-  background:radial-gradient(circle,var(--rose) 0 7%,transparent 8% 15%,var(--gold) 16% 18%,transparent 19%),
-  repeating-conic-gradient(var(--gold) 0 5deg,transparent 5deg 15deg);
-  -webkit-mask:radial-gradient(circle,#000 62%,transparent 63%);mask:radial-gradient(circle,#000 62%,transparent 63%);animation:spin 40s linear infinite}
+.logo{position:relative;width:clamp(96px,24vw,140px);aspect-ratio:1;margin:0 auto 1.1rem;border-radius:50%}
+.logo::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--gold),var(--gl),#9c6d22,var(--gl),var(--gold));
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));animation:spin 10s linear infinite}
+.logo img,.logo::after{position:absolute;inset:9px;width:calc(100% - 18px);height:calc(100% - 18px);border-radius:50%;background:#fff;object-fit:contain;padding:7px;box-shadow:0 8px 24px #5b0f2444}
+.logo::after{content:"Your college logo";display:none;place-items:center;text-align:center;padding:12px;font:700 .7rem/1.3 Cinzel,serif;color:var(--wine);background:#fff9}
+.logo.empty img{display:none}.logo.empty::after{display:grid}
 .card .script{font-size:clamp(1.8rem,6vw,2.6rem);color:var(--rose);line-height:1.2}
 h1{font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem);line-height:1.1;margin:.5rem 0 .2rem}
 .sub{font-style:italic;font-size:1.3rem;color:var(--wine)}
@@ -155,7 +157,8 @@ h1{font-family:Cinzel,serif;font-weight:700;font-size:clamp(2.1rem,8.5vw,4.4rem)
     <div class="tilt" id="tilt">
       <div class="card" id="card">
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-        <div class="mandala" aria-hidden="true"></div>
+        <!-- Put your logo file next to index.html and name it logo.png (or change the src below) -->
+        <div class="logo" id="logo"><img src="logo.png" alt="College logo"></div>
         <p class="script">With joy and blessings, we invite you to</p>
         <h1 class="foil">Freshers' Welcome Party</h1>
         <p class="sub">A morning to welcome our newest family</p>
@@ -220,6 +223,11 @@ $('seal').addEventListener('click',()=>{
   setTimeout(()=>$('intro').remove(),4200);
   setTimeout(observe,3000);
 });
+
+// College logo: shows a placeholder until logo.png is added
+const lg=document.querySelector('#logo img');
+lg.addEventListener('error',()=>$('logo').classList.add('empty'));
+if(lg.complete&&!lg.naturalWidth)$('logo').classList.add('empty');
 
 // Stagger card content
 [...$('card').children].forEach((el,i)=>el.style.setProperty('--i',i));
