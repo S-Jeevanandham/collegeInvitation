@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freshers' Welcome Party – Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<!-- FRONT: doors + opening sentence -->
+<section class="front" id="front">
+  <div class="light" aria-hidden="true"></div>
+  <div class="door left"><i class="panel"></i><i class="panel"></i><i class="studs"></i><i class="ring"></i></div>
+  <div class="door right"><i class="panel"></i><i class="panel"></i><i class="studs"></i><i class="ring"></i></div>
+
+  <div class="plaque" id="plaque">
+    <div class="mandala" aria-hidden="true"></div>
+    <p class="line l1">Every great story begins with a first day.</p>
+    <p class="line l2">Yours begins with a celebration.</p>
+    <button class="open-btn" id="openBtn">Open the door</button>
+  </div>
+</section>
+
+<!-- INVITATION -->
+<main class="invite" id="invite" aria-hidden="true">
+  <div class="tilt" id="tilt">
+    <div class="card" id="card">
+      <div class="corner tl"></div><div class="corner tr"></div>
+      <div class="corner bl"></div><div class="corner br"></div>
+
+      <div class="diyas" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="small">With the blessings of our elders, we cordially invite you to</p>
+      <h1>Freshers' Welcome Party</h1>
+      <div class="divider"><i></i></div>
+
+      <p class="to">Dear <strong>Students</strong> &amp; Respected <strong>Professors</strong>,</p>
+      <p class="msg">Join us as we welcome our new batch with music, dance, good food and warm smiles. Students, come and meet your new family. Professors, come and bless the beginning of their journey. Your presence will make this evening complete.</p>
+
+      <div class="details">
+        <div><span>Date</span><b id="dDate"></b></div>
+        <div><span>Time</span><b id="dTime"></b></div>
+        <div><span>Venue</span><b id="dVenue"></b></div>
+      </div>
+
+      <div class="countdown" id="countdown">
+        <div><b id="cd">00</b><span>days</span></div>
+        <div><b id="ch">00</b><span>hours</span></div>
+        <div><b id="cm">00</b><span>mins</span></div>
+        <div><b id="cs">00</b><span>secs</span></div>
+      </div>
+
+      <div class="tags"><span>Music</span><span>Dance</span><span>Games</span><span>Dinner</span></div>
+
+      <p class="foot">Traditional wear is warmly encouraged.<br>We look forward to seeing you!</p>
+    </div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
