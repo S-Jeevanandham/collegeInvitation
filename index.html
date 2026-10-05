@@ -319,7 +319,7 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
 
 <script>
 const $=id=>document.getElementById(id);
-const EVENT=new Date('2026-10-09T09:30:00');
+const EVENT=new Date('2026-10-09T09:30:00+05:30');
 
 // Envelope opening
 $('seal').addEventListener('click',()=>{
@@ -355,11 +355,23 @@ function tick(){const s=Math.floor(Math.max(0,EVENT-new Date())/1000);
   $('cm').textContent=pad(Math.floor(s%3600/60));$('cs').textContent=pad(s%60)}
 tick();setInterval(tick,1000);
 
-// Save the date (.ics)
+// Save the date (.ics) - 9:30 AM to 1:30 PM India time
 $('cal').addEventListener('click',()=>{
-  const ics=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','SUMMARY:Freshers\' Welcome Party','DTSTART:20261009T093000','DTEND:20261009T133000','LOCATION:MCA   Auditorium','END:VEVENT','END:VCALENDAR'].join('\r\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='freshers-welcome-party.ics';a.click()});
-
+  const ics=[
+    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Freshers Invite//EN','CALSCALE:GREGORIAN',
+    'BEGIN:VEVENT',
+    'UID:freshers-welcome-2026@invite',
+    'DTSTAMP:20261001T000000Z',
+    'SUMMARY:Freshers\' Welcome Party',
+    'DTSTART:20261009T040000Z',
+    'DTEND:20261009T080000Z',
+    'LOCATION:MCA Auditorium',
+    'END:VEVENT','END:VCALENDAR'
+  ].join('\r\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
+  a.download='freshers-welcome-party.ics';a.click();
+});
 // Gold dust
 const cv=$('dust'),cx=cv.getContext('2d');let W,H,P=[];
 function size(){W=cv.width=innerWidth;H=cv.height=innerHeight}size();addEventListener('resize',size);
