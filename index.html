@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="You're Invited - Freshers Welcome Party">
-<meta property="og:description" content="07 October 2026, 9:30 AM ..... Invitation designed by SJ."
+<meta property="og:description" content="09 October 2026, 9:30 AM. Dear Students and Respected professors, join us! Invitation designed by S.JEEVA."
 <link rel="icon" href="logo.png">
 <title>You're Invited – Freshers' Welcome Party</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -157,15 +157,17 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
 .box h3{font:700 1.6rem Cinzel,serif;color:var(--gl);margin-bottom:.8rem}
 .box p{line-height:1.6}
 .tl8{position:relative;padding-left:2.2rem;max-width:36rem;margin:0 auto}
-.tl8::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),transparent)}
+.tl8::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),transparent)}
 .tl8 div{position:relative;margin-bottom:1.8rem;color:var(--ivory)}
 .tl8 div::before{content:"";position:absolute;left:-2.2rem;top:.4rem;width:16px;height:16px;background:var(--rose);border:2px solid var(--gold);transform:rotate(45deg)}
 .tl8 b{display:block;font:700 1.1rem Cinzel,serif;color:var(--gl)}
 .end{text-align:center;color:var(--ivory);padding-bottom:5rem}
 .end .script{font-size:clamp(2.6rem,10vw,4.6rem)}
 .end p{margin-top:.8rem}
-.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
-.rv.in{opacity:1;transform:none}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s }
+.rv.in p{padding-left: 10px;}
+.rv.in{opacity:1;transform:none;padding-left: 4px;}
+.rv.in li{margin-left: 70px;}
 @media (max-width:640px){
   body{font-size:1.05rem}
   .intro{gap:2rem}
@@ -187,6 +189,36 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
   .box{padding:1.8rem 1.2rem}
 }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}}
+.views{position:relative;display:inline-flex;align-items:center;gap:1rem;margin-top:1.6rem;padding:.8rem 1.7rem .8rem .9rem;
+  text-align:left;color:var(--ivory);border:1.5px solid var(--gold);border-radius:18px;overflow:hidden;
+  background:linear-gradient(135deg,#7a1530,#3a0818);
+  box-shadow:0 14px 34px #000a,inset 0 0 0 4px #0003,0 0 0 5px #c9a14a22}
+.views::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(100deg,transparent,#f1d58a55,transparent);transform:skewX(-20deg);animation:vsweep 4s ease-in-out infinite}
+@keyframes vsweep{60%,100%{left:140%}}
+.eye{position:relative;width:62px;height:62px;flex:none;display:grid;place-items:center}
+.eye .ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--gold);animation:vpulse 2.4s ease-out infinite}
+.eye .r2{animation-delay:1.2s}
+@keyframes vpulse{from{transform:scale(.55);opacity:.9}to{transform:scale(1.2);opacity:0}}
+.eye svg{position:relative;overflow:visible}
+.blink{transform-origin:32px 20px;animation:vblink 5s infinite}
+@keyframes vblink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}
+.look{animation:vlook 6s ease-in-out infinite}
+@keyframes vlook{0%,20%,80%,100%{transform:translateX(0)}35%,50%{transform:translateX(-5px)}60%,70%{transform:translateX(5px)}}
+.views{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.3rem;padding:.3rem 1rem .3rem .35rem;
+  border-radius:999px;border:1px solid var(--gold);font-family:Cinzel,serif;
+  background:linear-gradient(135deg,#6e1229,#35071a);
+  box-shadow:0 6px 16px #0008,0 0 0 3px #c9a14a1f}
+.veye{position:relative;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;color:#5b0f24;
+  background:radial-gradient(circle at 35% 30%,#fff2c0,#c9a14a);box-shadow:0 0 0 2px #0003}
+.veye::before{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--gl);animation:vpulse 2.4s ease-out infinite}
+@keyframes vpulse{from{transform:scale(1);opacity:.9}to{transform:scale(1.5);opacity:0}}
+.veye svg{animation:vblink 5s infinite}
+@keyframes vblink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.pupil{animation:vlook 6s ease-in-out infinite}
+@keyframes vlook{0%,25%,75%,100%{transform:translateX(0)}40%,50%{transform:translateX(-1.5px)}60%,68%{transform:translateX(1.5px)}}
+.views b{font-size:1.05rem;line-height:1}
+.vl{font:italic 500 .95rem 'Cormorant Garamond',serif;color:#f1d58acc}
 </style>
 </head>
 <body>
@@ -201,7 +233,7 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
     <div class="letter"><span class="script">You are invited</span><b>Freshers' Welcome Party</b><span class="script">Department of ComputerScience</span></div>
     <div class="pocket"></div>
     <svg class="edge" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,0 150,112 300,0"/><path class="dim" d="M10,26 V190 H290 V26"/></svg>
-    <div class="addr"><span class="script">For our Students &amp; Respected Professors</span><small>07 . 10 . 2026</small></div>
+    <div class="addr"><span class="script">For our Students &amp; Respected Professors</span><small>09 . 10 . 2026</small></div>
     <div class="flap"><svg viewBox="0 0 300 112" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,0 150,112 300,0"/></svg></div>
     <button class="seal" id="seal" aria-label="Open the invitation">CS</button>
   </div>
@@ -214,7 +246,7 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
       <div class="card" id="card">
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
         <!-- Put your logo file next to index.html and name it logo.png (or change the src below) -->
-        <h2 class="college">Government Arts College, kumbakonam</h2>
+        <h2 class="college">Government Arts College(Autonomous), kumbakonam</h2>
         <div class="dept">Department of Computer Science</div>
         <div class="logo" id="logo"><img src="logo.png" alt="College logo"></div>
         <p class="script">With joy and blessings, we invite you to</p>
@@ -224,9 +256,9 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
         <p class="to">Dear <strong>Students</strong> &amp; Respected <strong>Professors</strong>,</p>
         <p class="msg">Be our guest as we celebrate new beginnings with music, laughter, and good company. Your presence will make this day truly special.</p>
         <div class="when">
-          <div><span>Date</span><b>07 . 10 . 2026</b><small>Wednesday</small></div>
+          <div><span>Date</span><b>09 . 10 . 2026</b><small>Friday</small></div>
           <div><span>Time</span><b>9:30 AM</b><small>Sharp</small></div>
-          <div><span>Venue</span><b>Main Auditorium</b><small>Your College Campus</small></div>
+          <div><span>Venue</span><b>MCA Auditorium</b><small>Your College Campus</small></div>
         </div>
         <div class="countdown">
           <div><b id="cd">00</b><span>days</span></div><div><b id="ch">00</b><span>hours</span></div>
@@ -256,24 +288,38 @@ h1{overflow-wrap:break-word;font-family:Cinzel,serif;font-weight:700;font-size:c
   <section class="wrap" style="padding-top:0">
     <h2 class="script rv">The day's programme</h2>
     <div class="tl8">
-      <div class="rv"><b>9:30 AM</b>Guests arrive and welcome</div>
-      <div class="rv"><b>10:00 AM</b>Lamp lighting and prayer</div>
-      <div class="rv"><b>10:30 AM</b>Address by our professors</div>
-      <div class="rv"><b>11:15 AM</b>Cultural performances</div>
-      <div class="rv"><b>12:30 PM</b>Games and fun</div>
-      <div class="rv"><b>1:00 PM</b>Concluding with Friendship</div>
+      <div class="rv"><b>09:30 - 09:40 AM</b>🎤 Guests arrive and welcome speech -  Hosts (II M.Sc., III B.Sc.)</div>
+      <div class="rv"><b>09:40 - 10:40 AM</b>👨‍🏫 Speeches by Professors & Guest Lecturers.</div>
+      <div class="rv"><b>10:40 - 10:50 AM</b>🎓 Speech by Freshers -  I B.Sc., & I M.Sc.,</div>
+      <div class="rv"><b>10:50 - 11:10 AM</b>🎙️ Speech by Seniors -  III B.Sc., & II M.Sc.,</div>
+      <div class="rv"><b>11:10 - 11:40 AM</b>🎯Games and Fun Activities</div>
+      <div class="rv"><b>11:40 - 12:30 PM</b>🎭 <u>Competitions</u> :- <ul><li>Singing</li> <li>Speech</li> <li>Dance</li></ul></div>
+      <div class="rv"><b>12:30 - 12:45 PM</b>🏆 Results & Prize Distribution</div>
+      <div class="rv"><b>12:45 - 01:00 PM</b>🙏 Vote of Thanks</div>
+      <div class="rv"><b>01:00 - 01:30 PM</b>📸 Closing & Group Photos</div>
     </div>
   </section>
 
   <footer class="wrap end">
     <p class="script foil rv">See you there!</p>
+    <div class="views rv" id="views">
+  <span class="veye" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+      <circle class="pupil" cx="12" cy="12" r="3" fill="currentColor"/>
+    </svg>
+  </span>
+  <b class="foil" id="viewCount">0</b>
+  <span class="vl">views</span>
+</div>
     <p class="rv">With warm regards, The Organising Committee</p>
+    
   </footer>
 </div>
 
 <script>
 const $=id=>document.getElementById(id);
-const EVENT=new Date('2026-10-07T09:30:00');
+const EVENT=new Date('2026-10-09T09:30:00');
 
 // Envelope opening
 $('seal').addEventListener('click',()=>{
@@ -311,7 +357,7 @@ tick();setInterval(tick,1000);
 
 // Save the date (.ics)
 $('cal').addEventListener('click',()=>{
-  const ics=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','SUMMARY:Freshers\' Welcome Party','DTSTART:20261007T093000','DTEND:20261007T133000','LOCATION:Main Auditorium','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','SUMMARY:Freshers\' Welcome Party','DTSTART:20261009T093000','DTEND:20261009T133000','LOCATION:MCA   Auditorium','END:VEVENT','END:VCALENDAR'].join('\r\n');
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='freshers-welcome-party.ics';a.click()});
 
 // Gold dust
@@ -323,6 +369,15 @@ if(!matchMedia('(prefers-reduced-motion:reduce)').matches)(function draw(){
   P.forEach(p=>{p.y-=p.v;p.t+=.03;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}
     cx.globalAlpha=.35+Math.sin(p.t)*.35;cx.fillStyle='#f1d58a';cx.beginPath();cx.arc(p.x+Math.sin(p.t)*8,p.y,p.r,0,7);cx.fill()});
   requestAnimationFrame(draw)})();
+
+// View counter (counts once per visit)
+const first=!sessionStorage.getItem('counted');
+fetch('counter.php'+(first?'?hit=1':''),{cache:'no-store'})
+  .then(r=>r.json()).then(d=>{
+    sessionStorage.setItem('counted','1');
+    const el=$('viewCount'),end=d.views,step=Math.max(1,Math.ceil(end/40));
+    let n=0;const t=setInterval(()=>{n=Math.min(end,n+step);el.textContent=n.toLocaleString();if(n>=end)clearInterval(t)},30);
+  }).catch(()=>{$('views').style.display='none'});
 </script>
 </body>
 </html>
