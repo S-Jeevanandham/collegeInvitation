@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 header('Cache-Control: no-store');
-$file = __DIR__ . '/views.txt';
+$file = __DIR__ . '/views.json';
 $fp = fopen($file, 'c+');
 flock($fp, LOCK_EX);
 $count = (int) trim(stream_get_contents($fp));
